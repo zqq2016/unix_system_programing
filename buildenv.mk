@@ -12,9 +12,9 @@ SOURCE := c
 endif
 
 ifeq ($(COMPILE_DEBUG), 1)
-CXXFLAGS += -std=c99 -Wall -O0 -g -fPIC
+CXXFLAGS += -std=c99 -Wall -O0 -g
 else
-CXXFLAGS += -std=c99 -Wall -O2 -fPIC
+CXXFLAGS += -std=c99 -Wall -O2
 endif 
 
 LDFLAGS +=
@@ -49,7 +49,7 @@ ifneq ($(findstring .a, $(TARGET)),)
 	$(AR) crv $@ $^
 else
 ifneq ($(findstring .so, $(TARGET)),)
-	$(CXX) $(CXXFLAGS) -shared $^ $(LIBARAY) $(LDFLAGS) -o $@
+	$(CXX) $(CXXFLAGS) -shared -fPIC $^ $(LIBARAY) $(LDFLAGS) -o $@
 else
 	$(CXX) $(CXXFLAGS) $^ $(LIBARAY) $(LDFLAGS) -o $@
 endif

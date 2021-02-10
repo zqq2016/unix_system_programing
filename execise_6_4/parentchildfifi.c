@@ -13,7 +13,7 @@
 int dofifochild(const char *fifoname, const char *idstring);
 int dofifoparent(const char *fifoname);
 
-int main(int argc, char *argv[])
+int parentchildfifo(int argc, char *argv[])
 {
     pid_t child_pid;
     if (argc != 2)
