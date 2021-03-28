@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
         return 0;
     }
     dlerror();
-    entry = dlsym(p_dlhandle, "test");
+    entry = dlsym(p_dlhandle, argv[1]);
     error_info = dlerror();
     if (error_info != NULL)
     {

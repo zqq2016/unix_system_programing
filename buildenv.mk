@@ -12,9 +12,9 @@ SOURCE := c
 endif
 
 ifeq ($(COMPILE_DEBUG), 1)
-CXXFLAGS += -std=c99 -Wall -O0 -g
+CXXFLAGS += -std=gnu99 -Wall -O0 -g
 else
-CXXFLAGS += -std=c99 -Wall -O2
+CXXFLAGS += -std=gnu99 -Wall -O2
 endif 
 
 LDFLAGS +=
@@ -39,7 +39,7 @@ target: $(TARGET)
 
 # unittest: $(UNITTEST_OBJECTS)
 
-# -include $(DEPENDS)
+-include $(DEPENDS)
 
 test:
 	echo $(SOURCES) $(OBJECTS)

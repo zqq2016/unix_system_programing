@@ -1,4 +1,4 @@
 BASEDIR = ../
-TARGET := restart.a
+TARGET := librestart.a
 
 include $(BASEDIR)/buildenv.mk
